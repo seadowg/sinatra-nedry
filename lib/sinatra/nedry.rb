@@ -31,7 +31,7 @@ module Sinatra
     
     def not_authorized
       headers['WWW-Authenticate'] = 'Basic realm="Restricted Area"'
-      halt 401, NOT_AUTH_TEMPLAT
+      halt 401, NOT_AUTH_TEMPLATE
     end
     
     NOT_AUTH_TEMPLATE = <<-ERB
