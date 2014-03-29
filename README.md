@@ -1,5 +1,7 @@
 # sinatra-nedry
 
+![nedry](media/nedry.jpg)
+
 ## Installation
 
 Either include in your Gemfile:
@@ -14,7 +16,8 @@ Or, install for your system:
 
 ## Usage
 
-Protect an action with HTTP basic auth by wrapping it:
+Protect an action with [HTTP basic auth](http://en.wikipedia.org/wiki/Basic_access_authentication)
+by wrapping it:
 
 ```ruby
 get '/admin' do
