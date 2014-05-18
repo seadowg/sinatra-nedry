@@ -16,6 +16,8 @@ Or, install for your system:
 
 ## Usage
 
+### Protecting
+
 Protect an action with [HTTP basic auth](http://en.wikipedia.org/wiki/Basic_access_authentication)
 by wrapping it:
 
@@ -29,6 +31,23 @@ end
 
 The username/password used to authenticate should be configured in your environment as
 `ADMIN_USERNAME` and `ADMIN_PASSWORD` respectively.
+
+### Feature flagging
+
+If you want to flag an action so that it is only available
+in production then it's very similar:
+
+
+```ruby
+get '/new_feature' do
+  flagged! do
+    render_page :new_feature
+  end
+end
+```
+
+This will page will only action will now only require authorization
+if the `RACK_ENV` env variable is set to 'production'.
 
 ## Contributing
 
